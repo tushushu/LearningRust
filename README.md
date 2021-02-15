@@ -10,6 +10,6 @@ The Book link is: https://doc.rust-lang.org/book/
 5. Run `rustup component add rls-preview`;
 6. Run `rustup component add rust-analysis --toolchain stable`;
 7. Run `rustup component add rust-src --toolchain stable`;
-8. Intall VSCode extensions named `rust-analyzer` and `CodeLLDB`, and do not install `Rust` because it has conflicts with `rust-analyzer`.
+8. Intall VSCode extensions named `Rust` and `CodeLLDB`.
 
 
