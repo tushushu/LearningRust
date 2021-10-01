@@ -26,6 +26,33 @@ fn sum_i32_dict(map: HashMap<String, i32>) -> i32 {
     map.values().sum()
 }
 
+/// A class to describe a person.
+#[pyclass]
+struct Person {
+    age: i32,
+    gender: String,
+    married: bool,
+}
+
+#[pymethods]
+impl Person {
+    #[new]
+    fn new(age: i32, gender: String, married: bool) -> Self {
+        Person {
+            age,
+            gender,
+            married,
+        }
+    }
+
+    pub fn info(&self) -> String {
+        format!(
+            "Age {0:?}\nGender {1}\nMarried {2:?}\n",
+            self.age, self.gender, self.married
+        )
+    }
+}
+
 /// A Python module implemented in Rust. The name of this function must match
 /// the `lib.name` setting in the `Cargo.toml`, else Python will not be able to
 /// import the module.
@@ -35,6 +62,7 @@ fn my_module(_py: Python, m: &PyModule) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(sum_i32_dict, m)?)?;
     m.add_function(wrap_pyfunction!(rsum, m)?)?;
     m.add_function(wrap_pyfunction!(sum_i32_array, m)?)?;
+    m.add_class::<Person>()?;
 
     Ok(())
 }
