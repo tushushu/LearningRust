@@ -4,10 +4,9 @@ fn main() {
     // println!("{}", x);
 
     // // 1. Assigned by uninitialized reference
+    // let z = 100;
     // let x: &i32;
-    // let mut y = &100;
-    // println!("{}", y);
-
+    // let mut y = &z;
     // y = x;
     // println!("{}", y);
 
@@ -20,8 +19,8 @@ fn main() {
     // x = None;
     // println!("{:?}", x);
 
-    // // x += 3;
-    // // println!("{:?}", x);
+    // x += 3;
+    // println!("{:?}", x);
 
     // let mut y = match x {
     //     None => panic!("x is None"),
@@ -31,17 +30,17 @@ fn main() {
     // y += 3;
     // println!("{}", y)
 
-    // // 3. Using Option<&Student> type
-    // // In this case there are 6 types in Rust:
-    // // - Student
-    // // - &Student
-    // // - Option<Student>
-    // // - &Option<Student>
-    // // - Option<&Student>
-    // // - &Option<&Student>
-    // struct Student {
-    //     age: i32,
-    // }
-    // let s: Option<Student> = None;
-    // println!("{}", s.age);
+    // 3. Using Option<&Student> type
+    // In this case there are 6 types in Rust:
+    // - Student
+    // - &Student
+    // - Option<Student>
+    // - &Option<Student>
+    // - Option<&Student>
+    // - &Option<&Student>
+    struct Student {
+        age: i32,
+    }
+    let s: Option<Student> = None;
+    println!("{}", s.age);
 }
